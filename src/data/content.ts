@@ -83,8 +83,10 @@ export const publications: Publication[] = [
     type: "Conference",
     title: "Time Optimal Gate Traversing Planner for Autonomous Drone Racing",
     authors: [
+      { name: "C. Qin", highlight: false },
       { name: "M. Michet", highlight: true },
-      { name: "et al.", highlight: false },
+      { name: "J. Chen", highlight: false },
+      { name: "H. Liu", highlight: false },
     ],
     venue: "IEEE International Conference on Robotics and Automation (ICRA)",
     location: "Yokohama, Japan",
