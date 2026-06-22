@@ -30,7 +30,7 @@ export default function Snake() {
     let food: Vec = { x: 14, y: 10 };
     let score = 0;
     let best = Number(localStorage.getItem(BEST_KEY) || 0);
-    let stepMs = 130;
+    let stepMs = 160;
     let lastStep = 0;
     let swipeStart: Vec | null = null;
 
@@ -49,7 +49,7 @@ export default function Snake() {
       dir = { x: 1, y: 0 };
       dirQueue = [];
       score = 0;
-      stepMs = 130;
+      stepMs = 160;
       placeFood();
     };
 
@@ -77,7 +77,7 @@ export default function Snake() {
       snake.unshift(head);
       if (head.x === food.x && head.y === food.y) {
         score += 1;
-        stepMs = Math.max(65, stepMs - 2.5);
+        stepMs = Math.max(90, stepMs - 1.5);
         placeFood();
       } else {
         snake.pop();

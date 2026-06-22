@@ -43,8 +43,8 @@ export default function DoodleJump() {
     const newPlatform = (y: number): Platform => ({
       x: Math.random() * (W - 58),
       y,
-      w: 58,
-      moving: Math.random() < Math.min(0.08 + score / 6000, 0.5),
+      w: 70,
+      moving: Math.random() < Math.min(0.04 + score / 10000, 0.35),
       dir: Math.random() < 0.5 ? -1 : 1,
       speed: 0.8 + Math.random() * 1.4,
     });
@@ -52,13 +52,13 @@ export default function DoodleJump() {
     const reset = () => {
       score = 0;
       player = { x: W / 2 - 13, y: H - 92, w: 26, h: 30, vx: 0, vy: JUMP_V };
-      platforms = [{ x: W / 2 - 29, y: H - 52, w: 58, moving: false, dir: 1, speed: 0 }];
-      for (let y = H - 110; y > -40; y -= 54) platforms.push(newPlatform(y));
+      platforms = [{ x: W / 2 - 35, y: H - 52, w: 70, moving: false, dir: 1, speed: 0 }];
+      for (let y = H - 110; y > -40; y -= 48) platforms.push(newPlatform(y));
     };
 
     const update = () => {
       const dir = (input.left ? -1 : 0) + (input.right ? 1 : 0) + input.touch;
-      player.vx = Math.max(-5.5, Math.min(5.5, (player.vx + dir * 0.55) * 0.93));
+      player.vx = Math.max(-3.5, Math.min(3.5, (player.vx + dir * 0.35) * 0.88));
       player.x += player.vx;
       // wrap around the screen edges
       if (player.x > W) player.x = -player.w;
@@ -101,7 +101,7 @@ export default function DoodleJump() {
       platforms = platforms.filter((p) => p.y < H + 20);
       let top = Math.min(...platforms.map((p) => p.y));
       while (top > -40) {
-        top -= 46 + Math.random() * 20;
+        top -= 40 + Math.random() * 14;
         platforms.push(newPlatform(top));
       }
 

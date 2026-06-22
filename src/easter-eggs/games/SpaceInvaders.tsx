@@ -87,14 +87,14 @@ export default function SpaceInvaders() {
       // player movement + shooting
       const dir = (input.left ? -1 : 0) + (input.right ? 1 : 0);
       player.x = Math.max(6, Math.min(W - player.w - 6, player.x + dir * 4.2));
-      if (input.fire && t - lastShot > 320) {
+      if (input.fire && t - lastShot > 200) {
         bullets.push({ x: player.x + player.w / 2, y: PLAYER_Y - 6, vy: -7 });
         lastShot = t;
       }
 
       // alien fleet movement: speeds up as the fleet thins out
       const alive = aliens.filter((a) => a.alive);
-      const speed = (0.35 + (1 - alive.length / (COLS * ROWS)) * 1.5 + wave * 0.15) * alienDir;
+      const speed = (0.22 + (1 - alive.length / (COLS * ROWS)) * 0.9 + wave * 0.1) * alienDir;
       let hitEdge = false;
       for (const a of alive) {
         a.x += speed;
@@ -109,13 +109,13 @@ export default function SpaceInvaders() {
       }
 
       // alien fire
-      const fireEvery = Math.max(450, 950 - wave * 80);
+      const fireEvery = Math.max(800, 1600 - wave * 80);
       if (alive.length > 0 && t - lastAlienShot > fireEvery) {
         const shooter = alive[Math.floor(Math.random() * alive.length)];
         alienBullets.push({
           x: shooter.x + ALIEN_W / 2,
           y: shooter.y + ALIEN_H,
-          vy: 2.6 + wave * 0.3,
+          vy: 1.8 + wave * 0.2,
         });
         lastAlienShot = t;
       }
