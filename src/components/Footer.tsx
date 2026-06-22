@@ -10,7 +10,7 @@ export default function Footer() {
           <p>
             <span
               onClick={() => trigger('invaders')}
-              className="cursor-default select-none"
+              className="cursor-pointer select-none hover:text-cyan-500 transition-colors"
             >&copy;</span>
             {' '}{new Date().getFullYear()} {personalInfo.name}
           </p>

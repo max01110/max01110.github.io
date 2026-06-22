@@ -36,7 +36,7 @@ export default function Header({ darkMode, setDarkMode }: HeaderProps) {
             </span>
             {/* Easter egg: the blinking terminal cursor launches Snake */}
             <motion.span
-              className="text-cyan-500 ml-0.5"
+              className="text-cyan-500 ml-0.5 cursor-pointer hover:text-violet-400 transition-colors"
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 1.2, repeat: Infinity, ease: 'steps(2)' }}
               onClick={(e) => {
