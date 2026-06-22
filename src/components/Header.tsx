@@ -23,12 +23,7 @@ export default function Header({ darkMode, setDarkMode }: HeaderProps) {
     <header className="sticky top-0 z-50 backdrop-blur-md bg-white/80 dark:bg-navy-950/80 border-b border-slate-200/60 dark:border-slate-800/60">
       <div className="max-w-content mx-auto px-6 py-3.5">
         <nav className="flex items-center justify-between">
-          <motion.a
-            href="#"
-            className="font-mono text-sm no-underline text-slate-900 dark:text-slate-100"
-            whileHover={{ scale: 1.03 }}
-            transition={{ type: 'spring', stiffness: 400 }}
-          >
+          <span className="font-mono text-sm text-slate-900 dark:text-slate-100">
             <span className="text-cyan-500">~</span>
             <span className="text-slate-400 dark:text-slate-600">/</span>
             <span className="text-slate-800 dark:text-slate-200">
@@ -39,15 +34,11 @@ export default function Header({ darkMode, setDarkMode }: HeaderProps) {
               className="text-cyan-500 ml-0.5 cursor-pointer hover:text-violet-400 transition-colors"
               animate={{ opacity: [1, 0, 1] }}
               transition={{ duration: 1.2, repeat: Infinity, ease: 'steps(2)' }}
-              onClick={(e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                trigger('snake');
-              }}
+              onClick={() => trigger('snake')}
             >
               _
             </motion.span>
-          </motion.a>
+          </span>
 
           <div className="flex items-center gap-5">
             {links.map((l) => (
