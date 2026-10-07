@@ -13,16 +13,15 @@ export const subtitles = [
   "MASc Student, UTIAS",
 ];
 
-export const bio = `Hi, I'm Max! I'm a M.A.Sc. student at the [University of Toronto Robotics and AI Laboratory (TRAIL)](https://www.trailab.utias.utoronto.ca/) with [Prof. Steven Waslander](https://www.trailab.utias.utoronto.ca/steven-waslander), part of the [University of Toronto Robotics Institute](https://robotics.utoronto.ca/) and [UTIAS](https://www.utias.utoronto.ca/), and an Affiliate Researcher at the [Vector Institute](https://vectorinstitute.ai/).
+export const bio = `Hi, I'm Max! I'm a M.A.Sc. student at the [University of Toronto Robotics and AI Laboratory (TRAIL)](https://www.trailab.utias.utoronto.ca/) with [Prof. Steven Waslander](https://www.trailab.utias.utoronto.ca/steven-waslander), part of the [University of Toronto Robotics Institute](https://robotics.utoronto.ca/) and [UTIAS](https://www.utias.utoronto.ca/).
 
-My research is broadly focused on 3D perception for autonomous robots and vehicles. I'm interested in building robust, scalable systems that work reliably in the real world.
+My research is broadly focused on 3D perception for autonomous robots and vehicles, with interests in 3D scene graphs and long-horizon memory for mobile robots. I'm interested in building robust, scalable systems that work reliably in the real world.
 
 Previously, I worked at [MDA Space](https://mda.space/) on the Canadarm3 robotic arm for NASA's Artemis program. I've also worked on various research projects, including transformer-based visual odometry and autonomous drone racing.`;
 
 export const affiliations = [
   { name: "TRAIL Lab, UTIAS", role: "Master's Student (MASc)", url: "https://www.trailab.utias.utoronto.ca/" },
   { name: "University of Toronto", role: "MASc in Robotics and AI", url: "https://www.utias.utoronto.ca/" },
-  { name: "Vector Institute", role: "Affiliate Researcher", url: "https://vectorinstitute.ai/" },
 ];
 
 export const education: EducationEntry[] = [
